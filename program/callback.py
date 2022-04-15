@@ -95,13 +95,12 @@ async def cbcmds(_, query: CallbackQuery):
     )
 
 
-@Client.on_callback_query(filters.regex("cbbasic"))
+@Client.on_callback_query(filtقائمةers.regex("cbbasic"))
 async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""
- 🧞‍♂ مرحـبا بڪ فـي بـوت 🎧 BR Music 
+        f""" 🧞‍♂ مرحـبا بڪ فـي بـوت 🎧 BR Music 
 ء••••••••••••••••••••••«♡» •••••••••••••••••••
-⚠️ يجب استخدام {# ! \ } امام ڪل الاوامـر 
+⚠️ يجب استخدام { ! \ } امام ڪل الاوامـر 
 1⃣ تشغيل+ اسم »» لتشغـيل مـيوزك في المڪالمة 
 2⃣ فيديو+ اسم»» لتشغـيل الفيديو في المڪالمة 
 3⃣ ايقاف »» لايـقــاف التـشغيل ❗️
@@ -111,7 +110,17 @@ async def cbbasic(_, query: CallbackQuery):
 7⃣ كتم»» لڪتم البوت 🔇
 8⃣ الغاء »»  لرفع الڪتم عن البوت
 ء•••••••••••••••••••••••«♡» •••••••••••••••••••
-🔸 قائمة »» ↤ تظهر لك قائمة التشغيل
+__""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("تڪملة", callback_data="cbadminu")]]
+        ),
+    )
+
+
+@Client.on_callback_query(filters.regex("cbadminu"))
+async def cbadmin(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""  🔸 قائمة »» ↤ تظهر لك قائمة التشغيل
 🔹تح + الاسم»» تنزيل فيديو من youtube
 🔶 تحميل + الاسم»»  تنزيل صوت من youtube
 🔷الصوت + الرقم»» لضبط مستوئ الصوت
@@ -120,8 +129,13 @@ async def cbbasic(_, query: CallbackQuery):
 🔶 طرد »»»  لطرد حساب المساعد 
 🔹البنك »»»  إظهار حالة نت البوت 
 🔸معلومات إظهار معلومات البوت  (في المجموعة)
-__""",
+""",
         reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("اللغة الانڪليزية", callback_data="cbadmin")]]
+        ),
+    )
+
+reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("اللغة الانڪليزية", callback_data="cbadmin")]]
         ),
     )
@@ -132,7 +146,7 @@ async def cbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""  ༺ Hello My Friend to bot  🎶BR Music ༻
 ْ➖➖➖➖➖➖➖➖➖➖
-♻️ English language operation commands 🍀⚠️ You must use {# !  \ } in front of all orders
+♻️ English language operation commands 🍀⚠️ You must use {. !  \ } in front of all orders
  1️⃣ /mPlay + name »» to play your music in the call
  2⃣ /vplay + name to play the video in the call
  3⃣ /stop »» to stop playback ❗️
@@ -141,7 +155,23 @@ async def cbadmin(_, query: CallbackQuery):
  6️⃣ /Pause »» Pause playback
  7⃣ /vmute »» to mute the bot 🔇
  8⃣  /vunmute »» to remove the bot’s silence🔊
-➖➖➖➖➖➖➖➖➖➖
+""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbadminc")]]
+        ),
+    )
+reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("اللغة الانڪليزية", callback_data="cbadminc")]]
+        ),
+    )
+
+
+@Client.on_callback_query(filters.regex("cbadminc"))
+async def cbadmin(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""  ༺ Hello My Friend to bot  🎶BR Music ༻
+ْ➖➖➖➖➖➖➖➖➖➖
+♻️ English language operation commands 🍀⚠️ You must use {# !  \ } in front of all orders
  🔸 /PlayList »» ↤ Shows you the playlist
  🔹 /video + Name »» Download a video from youtube
  🔶 /song + Name »» Download audio from youtube
@@ -156,7 +186,6 @@ async def cbadmin(_, query: CallbackQuery):
             [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
         ),
     )
-
 
 @Client.on_callback_query(filters.regex("cbmenu"))
 async def cbmenu(_, query: CallbackQuery):
