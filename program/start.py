@@ -62,14 +62,14 @@ reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "༺اضفـني الى مجموعتڪ༻",
+                        " • اضفـني الى مجموعتڪ •",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton("༺ڪيفية الاسـتخدام༻", callback_data="cbhowtouse")],
+                [InlineKeyboardButton("• ڪيفية الاسـتخدام •", callback_data="cbhowtouse")],
                 [
-                    InlineKeyboardButton("༺الاوامــــــر باللغة ar- en༻", callback_data="cbbasic"),
-                    InlineKeyboardButton("ʚ -BaKr JaSsEm ɞ", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("الاوامــــــر ", callback_data="cbbasic"),
+                    InlineKeyboardButton("ʚ -BaKr ", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
                     InlineKeyboardButton(
@@ -78,7 +78,7 @@ reply_markup=InlineKeyboardMarkup(
                 ],
                 [
                     InlineKeyboardButton(
-                        "༺BR TEAM ༻", url="https://t.me/v00r22"
+                        "• BR TEAM • ", url="https://t.me/v00r22"
                     )
                 ],
             ]
@@ -88,7 +88,7 @@ reply_markup=InlineKeyboardMarkup(
 
 
 @Client.on_message(
-    command(["alive", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+    command(["alive", f"معلومات", f"alive@{BOT_USERNAME}"]) & filters.group & ~filters.edited
 )
 async def alive(client: Client, message: Message):
     current_time = datetime.utcnow()
