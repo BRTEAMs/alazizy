@@ -95,12 +95,12 @@ async def cbcmds(_, query: CallbackQuery):
     )
 
 
-@Client.on_callback_query(filtقائمةers.regex("cbbasic"))
+@Client.on_callback_query(filters.regex("cbbasic"))
 async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
-        f""" 🧞‍♂ مرحـبا بڪ فـي بـوت 🎧 BR Music 
+        f"""🧞‍♂ مرحـبا بڪ فـي بـوت 🎧 BR Music 
 ء••••••••••••••••••••••«♡» •••••••••••••••••••
-⚠️ يجب استخدام { ! \ } امام ڪل الاوامـر 
+⚠️ يجب استخدام {# ! \ } امام ڪل الاوامـر 
 1⃣ تشغيل+ اسم »» لتشغـيل مـيوزك في المڪالمة 
 2⃣ فيديو+ اسم»» لتشغـيل الفيديو في المڪالمة 
 3⃣ ايقاف »» لايـقــاف التـشغيل ❗️
@@ -109,18 +109,19 @@ async def cbbasic(_, query: CallbackQuery):
 6⃣ توقف »» ايقاف التشغيل موقتآ
 7⃣ كتم»» لڪتم البوت 🔇
 8⃣ الغاء »»  لرفع الڪتم عن البوت
-ء•••••••••••••••••••••••«♡» •••••••••••••••••••
 __""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("تڪملة", callback_data="cbadminu")]]
+            [[InlineKeyboardButton("🔙 الـتـالـي", callback_data="cbadmin")]]
         ),
     )
 
 
-@Client.on_callback_query(filters.regex("cbadminu"))
+@Client.on_callback_query(filters.regex("cbadmin"))
 async def cbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""  🔸 قائمة »» ↤ تظهر لك قائمة التشغيل
+        f"""  » 🧞‍♂ مرحـبا بڪ فـي بـوت 🎧 BR Music 
+ء••••••••••••••••••••••«♡» •••••••••••••••••••
+🔸 قائمة »» ↤ تظهر لك قائمة التشغيل
 🔹تح + الاسم»» تنزيل فيديو من youtube
 🔶 تحميل + الاسم»»  تنزيل صوت من youtube
 🔷الصوت + الرقم»» لضبط مستوئ الصوت
@@ -129,58 +130,26 @@ async def cbadmin(_, query: CallbackQuery):
 🔶 طرد »»»  لطرد حساب المساعد 
 🔹البنك »»»  إظهار حالة نت البوت 
 🔸معلومات إظهار معلومات البوت  (في المجموعة)
-""",
+ء•••••••••••••••••••••••«♡» •••••••••••••••••••
+__""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("اللغة الانڪليزية", callback_data="cbadmin")]]
+            [[InlineKeyboardButton("🔙 رجوع", callback_data="cbstart")]]
         ),
     )
 
-reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("اللغة الانڪليزية", callback_data="cbadmin")]]
-        ),
-    )
-
-
-@Client.on_callback_query(filters.regex("cbadmin"))
-async def cbadmin(_, query: CallbackQuery):
+@Client.on_callback_query(filters.regex("cbsudo"))
+async def cbsudo(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""  ༺ Hello My Friend to bot  🎶BR Music ༻
-ْ➖➖➖➖➖➖➖➖➖➖
-♻️ English language operation commands 🍀⚠️ You must use {. !  \ } in front of all orders
- 1️⃣ /mPlay + name »» to play your music in the call
- 2⃣ /vplay + name to play the video in the call
- 3⃣ /stop »» to stop playback ❗️
- 4️⃣ /resume »» Resume playback 🌀
- 5⃣ /Skip to play the next song
- 6️⃣ /Pause »» Pause playback
- 7⃣ /vmute »» to mute the bot 🔇
- 8⃣  /vunmute »» to remove the bot’s silence🔊
-""",
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbadminc")]]
-        ),
-    )
-reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("اللغة الانڪليزية", callback_data="cbadminc")]]
-        ),
-    )
+        f"""🏮 here is the sudo commands:
 
+» /rmw - clean all raw files
+» /rmd - clean all downloaded files
+» /sysinfo - show the system information
+» /update - update your bot to latest version
+» /restart - restart your bot
+» /leaveall - order userbot to leave from all group
 
-@Client.on_callback_query(filters.regex("cbadminc"))
-async def cbadmin(_, query: CallbackQuery):
-    await query.edit_message_text(
-        f"""  ༺ Hello My Friend to bot  🎶BR Music ༻
-ْ➖➖➖➖➖➖➖➖➖➖
-♻️ English language operation commands 🍀⚠️ You must use {# !  \ } in front of all orders
- 🔸 /PlayList »» ↤ Shows you the playlist
- 🔹 /video + Name »» Download a video from youtube
- 🔶 /song + Name »» Download audio from youtube
- 🔷/volume + Number»» to adjust the volume level
- 🔶 /reload »» to update the bot and the list of moderators
- 🔷 /userbotjoin »» to invoke the assistant account
- 🔶 /userbotleave »»» to expel the assistant account
- 🔹 /ping »»» Show bot net status
- 🔸 /alive»» Show bot information (in group)
+ ⚡ ادارة سورس العزايزي @php_7
 """,
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
