@@ -98,7 +98,8 @@ async def cbcmds(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbbasic"))
 async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""🧞‍♂ مرحـبا بڪ فـي بـوت 🎧 BR Music 
+        f"""🏮 ها هي الأوامر الأساسية:
+ 🧞‍♂ مرحـبا بڪ فـي بـوت 🎧 BR Music 
 ء••••••••••••••••••••••«♡» •••••••••••••••••••
 ⚠️ يجب استخدام {# ! \ } امام ڪل الاوامـر 
 1⃣ تشغيل+ اسم »» لتشغـيل مـيوزك في المڪالمة 
@@ -109,18 +110,6 @@ async def cbbasic(_, query: CallbackQuery):
 6⃣ توقف »» ايقاف التشغيل موقتآ
 7⃣ كتم»» لڪتم البوت 🔇
 8⃣ الغاء »»  لرفع الڪتم عن البوت
-__""",
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 الـتـالـي", callback_data="cbadmin")]]
-        ),
-    )
-
-
-@Client.on_callback_query(filters.regex("cbadmin"))
-async def cbadmin(_, query: CallbackQuery):
-    await query.edit_message_text(
-        f"""  » 🧞‍♂ مرحـبا بڪ فـي بـوت 🎧 BR Music 
-ء••••••••••••••••••••••«♡» •••••••••••••••••••
 🔸 قائمة »» ↤ تظهر لك قائمة التشغيل
 🔹تح + الاسم»» تنزيل فيديو من youtube
 🔶 تحميل + الاسم»»  تنزيل صوت من youtube
@@ -130,10 +119,28 @@ async def cbadmin(_, query: CallbackQuery):
 🔶 طرد »»»  لطرد حساب المساعد 
 🔹البنك »»»  إظهار حالة نت البوت 
 🔸معلومات إظهار معلومات البوت  (في المجموعة)
-ء•••••••••••••••••••••••«♡» •••••••••••••••••••
 __""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 رجوع", callback_data="cbstart")]]
+        ),
+    )
+
+@Client.on_callback_query(filters.regex("cbsudo"))
+async def cbsudo(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""🏮 here is the sudo commands:
+
+» /rmw - clean all raw files
+» /rmd - clean all downloaded files
+» /sysinfo - show the system information
+» /update - update your bot to latest version
+» /restart - restart your bot
+» /leaveall - order userbot to leave from all group
+
+ ⚡ ادارة سورس العزايزي @php_7
+""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
         ),
     )
 
