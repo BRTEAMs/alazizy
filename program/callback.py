@@ -120,7 +120,8 @@ async def cbbasic(_, query: CallbackQuery):
 🔶 طرد »»»  لطرد حساب المساعد 
 🔹البنك »»»  إظهار حالة نت البوت 
 🔸معلومات إظهار معلومات البوت  (في المجموعة)
-__""",
+
+""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("༺اوامر باللغة الانڪليزية༻", callback_data="cbadmin")]]
         ),
@@ -151,7 +152,8 @@ async def cbadmin(_, query: CallbackQuery):
  🔶 /userbotleave »»» to expel the assistant account
  🔹 /ping »»» Show bot net status
  🔸 /alive»» Show bot information (in group)
-__""",
+
+""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 رجوع", callback_data="cbstart")]]
         ),
